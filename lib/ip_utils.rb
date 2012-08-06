@@ -17,6 +17,10 @@ module IpUtils
 		return ip
 	end
 	
-	def next_ip(ip)
+	def IpUtils.next_ip(ip)
+		binary_ip = IpUtils.ip_to_binary(ip)
+		next_ip_as_number = binary_ip.to_i(2) + 1
+		next_binary_ip = sprintf("%0.32B", next_ip_as_number)
+		return IpUtils.binary_to_ip(next_binary_ip)
 	end
 end

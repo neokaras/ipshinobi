@@ -1,4 +1,5 @@
 require 'ip'
+require 'ip_utils'
 
 class IpTablet
 	attr_reader :network, :network_ip, :netmask
@@ -11,8 +12,12 @@ class IpTablet
 
 	def create_tablet_ips
 		i = 0
+		ip = @network_ip
+
 		@tablet_ips = Array.new( self.number_of_ips() ) do
-			ip = Ip.new(@network_ip)
+			ip_obj = Ip.new(ip)
+			ip = IpUtils.next_ip(ip)
+			ip_obj
 		end
 	end
 
