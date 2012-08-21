@@ -23,4 +23,11 @@ module IpUtils
 		next_binary_ip = sprintf("%0.32B", next_ip_as_number)
 		return IpUtils.binary_to_ip(next_binary_ip)
 	end
+	
+	def IpUtils.previous_ip(ip)
+		binary_ip = IpUtils.ip_to_binary(ip)
+		previous_ip_as_number = binary_ip.to_i(2) - 1
+		previous_binary_ip = sprintf("%0.32B", previous_ip_as_number)
+		return IpUtils.binary_to_ip(previous_binary_ip)
+	end
 end
