@@ -1,0 +1,35 @@
+IpTabletManager:
+----------------
+list_tablets()
+create_tablet()
+delete_tablet()
+
+notes: only one instance per application
+
+IpTablet:
+----------
+create_tablet_ips()
+display_tablet()
+load_tablet()
+store_tablet()
+
+IpTabletStore:
+-------------
+store_tablet_as_xml()
+load_tablet_as_xml()
+store_tablet_as_mysq()l
+load_tablet_as_mysql()
+
+notes: responsible for storage only. each data format has a store/load method pair.
+
+Ip:
+----
+display_ip()
+
+IpUtils: [Module]
+------------------
+ip_to_binary()
+binary_to_ip()
+next_ip()
+previous_ip()
+validate_tablet_definition()
