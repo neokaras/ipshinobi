@@ -1,0 +1,19 @@
+Data entities for Ipshinobi
+
+TABLET_METADATA: information about all tablet in the application
+	TABLET_ID
+	TABLET_NAME
+	TABLET_DESCRIPTION
+
+TABLET_<ID>: stores ip and attributes for a specific tablet
+	IP
+
+the attribute set for the tablet would be defined at creation time
+
+ATTRIBUTE: global pool of attributes that are defined in the application
+	ATTR_ID
+	ATTR_NAME
+
+ATTRIBUTE_MAP: maps attributes to ip tablets
+	TABLET_ID
+	ATTR_ID
