@@ -2,7 +2,7 @@ require 'ip'
 require 'ip_utils'
 
 class IpTablet
-	attr_reader :network, :network_ip, :netmask, :id
+	attr_reader :network, :network_ip, :netmask, :id, :tablet_ips
 	attr_accessor :name
 
 	def initialize(network)
@@ -16,7 +16,7 @@ class IpTablet
 		ip = @network_ip
 
 		@tablet_ips = Array.new( number_of_ips() ) do
-			ip_obj = Ip.new(ip)
+			ip_obj = Ip.new(ip, @id)
 			ip = IpUtils.next_ip(ip)
 			ip_obj
 		end
